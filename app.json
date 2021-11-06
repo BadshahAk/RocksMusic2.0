@@ -53,6 +53,11 @@
             "description": "fill with your username without @",
             "required": false,
             "value": "Dr_Asad_Ali"
+            },
+        "ALIVE_NAME": {
+            "description": "fill with the nickname of your telegram account",
+            "required": false,
+            "value": "Dr_Asad_Ali"
         },
         "API_ID": {
             "description": "your Api ID from my.telegram.org/apps",
