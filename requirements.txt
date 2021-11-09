@@ -22,3 +22,4 @@ heroku3
 gitpython
 pymongo
 node
+node-XMLHttpRequest
