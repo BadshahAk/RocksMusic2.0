@@ -1,5 +1,11 @@
-import asyncio
+# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Without Credit (Mother Fucker)
+# Rocks © @Dr_Asad_Ali © Rocks
+# Owner Asad + Harshit
+
+
 from os import path
+import asyncio
 
 from helpers.errors import FFmpegReturnCodeError
 
@@ -14,26 +20,19 @@ async def convert(file_path: str) -> str:
 
     if path.isfile(out):
         return out
-    try:
-        proc = await asyncio.create_subprocess_shell(
-            cmd=(
-                "ffmpeg "
-                "-y -i "
-                f"{file_path} "
-                "-f s16le "
-                "-ac 1 "
-                "-ar 48000 "
-                "-acodec pcm_s16le "
-                f"{out}"
-            ),
-            stdin=asyncio.subprocess.PIPE,
-        )
 
-        await proc.communicate()
+    proc = await asyncio.create_subprocess_shell(
+        f"ffmpeg -y -i {file_path} -f s16le -ac 2 -ar 48000 -acodec pcm_s16le {out}",
+        asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE
+    )
 
-        if proc.returncode != 0:
-            raise FFmpegReturnCodeError("FFmpeg did not return 0")
+    await proc.communicate()
 
-        return out
-    except:
+    if proc.returncode != 0:
         raise FFmpegReturnCodeError("FFmpeg did not return 0")
+
+    return out
+
+
+# Roses are red, Violets are blue, A face like yours, Belongs in a zoo.
