@@ -1,12 +1,12 @@
-from datetime import datetime
+import asyncio
 from time import time
-
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-
-from config import BOT_NAME, BOT_USERNAME, GROUP_SUPPORT, OWNER_NAME, UPDATES_CHANNEL
-from helpers.decorators import sudo_users_only
+from datetime import datetime
+from config import BOT_USERNAME, UPDATES_CHANNEL, ZAID_SUPPORT
 from helpers.filters import command
+from helpers.command import commandpro
+from pyrogram import Client, filters
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+
 
 START_TIME = datetime.utcnow()
 START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
