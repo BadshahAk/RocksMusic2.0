@@ -37,7 +37,8 @@ async def delcmd(_, message: Message):
     await message.continue_propagation()
 
 
-@Client.on_message(command(["reload", f"reload@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(filters.command(["reload", f"adminchache"]))
+@authorized_users_only # Fuk Off Everyone! Admin Only Command!
 async def update_admin(client, message):
     global admins
     new_admins = []
