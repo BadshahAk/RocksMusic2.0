@@ -59,13 +59,8 @@
         "UPDATES_CHANNEL": {
             "description": "if you have channel fill the channel username here without @",
             "required": false,
-            "value": "AsadSupport"
-            },
-        "GROUP_SUPPORT": {
-            "description": "if you have group fill the group username here without @",
-            "required": false,
-            "value": "Shayri_Music_Lovers"
-        },
+            "value": "AsadSupport"            
+         },
         "DATABASE_URL": {
             "description": "mongo db url leave if u don't have",
             "required": false,
