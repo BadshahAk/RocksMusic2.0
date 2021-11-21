@@ -28,7 +28,7 @@ QUE_IMG = os.environ.get("QUE_IMG", "https://telegra.ph/file/7169e0ea05e66f0ffd1
 UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "AsadSupport")
 OWNER_NAME = getenv("OWNER_NAME", "Dr_Asad_Ali")
 OWNER_ID = int(os.environ.get("OWNER_ID", "1342820594")
-GROUP_SUPPORT = getenv("GROUP_SUPPORT", "Shayri_Music_Lovers")
+GROUP_SUPPORT = getenv("GROUP_SUPPORT")
 ASSISTANT_NAME = getenv("ASSISTANT_NAME")
 # SOON ADDING 
 ARQ_API_KEY = getenv("ARQ_API_KEY")
