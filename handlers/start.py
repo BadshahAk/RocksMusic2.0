@@ -1,7 +1,7 @@
 import asyncio
 from time import time
 from datetime import datetime
-from config import BOT_USERNAME, UPDATES_CHANNEL, ZAID_SUPPORT
+from config import BOT_USERNAME, UPDATES_CHANNEL, GROUP_SUPPORT
 from helpers.filters import command
 from helpers.command import commandpro
 from pyrogram import Client, filters
