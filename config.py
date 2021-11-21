@@ -35,7 +35,7 @@ ASSISTANT_NAME = getenv("ASSISTANT_NAME")
 ARQ_API_KEY = getenv("ARQ_API_KEY")
 # Don't Change Anything Here
 ARQ_API_URL = "https://thearq.tech/"
-
+U_BRANCH = "main"      
 # Updator Configs
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
 HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
