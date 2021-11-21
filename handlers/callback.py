@@ -5,7 +5,6 @@
 
 from config import (
     ASSISTANT_NAME,
-    BOT_NAME,
     BOT_USERNAME,
     GROUP_SUPPORT,
     OWNER_NAME,
@@ -105,7 +104,7 @@ async def cbhelp(_, query: CallbackQuery):
 
 **Yᴏᴜ ᴄᴀɴ ғɪɴᴅ ʜᴇʀᴇ sᴇᴠᴇʀᴀʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ᴡɪᴛʜ ʙʀɪᴇғ ᴇxᴘʟᴀɴᴀᴛɪᴏɴ 👇**
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -153,7 +152,7 @@ async def cbbasic(_, query: CallbackQuery):
 /Developer - (Owner) - @Dr_Asad_Ali
 /ubjoinc - invite the assistant for join to your channel
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🏡 Go Back", callback_data="cbhelp")]]
         ),
@@ -172,7 +171,7 @@ async def cbadvanced(_, query: CallbackQuery):
 /id - show the group/user id & other
 /Developer - (Owner) - @Dr_Asad_Ali
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🏡 Go Back", callback_data="cbhelp")]]
         ),
@@ -198,7 +197,7 @@ async def cbadmin(_, query: CallbackQuery):
 /delcmd (on | off) - enable / disable del cmd feature
 /musicplayer (on / off) - disable / enable music player in your group
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🏡 Go Back", callback_data="cbhelp")]]
         ),
@@ -214,7 +213,7 @@ async def cbsudo(_, query: CallbackQuery):
 /stats - show the bot statistic
 /rmd - remove all downloaded files
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🏡 Go Back", callback_data="cbhelp")]]
         ),
@@ -234,7 +233,7 @@ async def cbowner(_, query: CallbackQuery):
 
 📝 note: all commands owned by this bot can be executed by the owner of the bot without any exceptions.
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🏡 Go Back", callback_data="cbhelp")]]
         ),
@@ -251,7 +250,7 @@ async def cbguide(_, query: CallbackQuery):
 3.) add @{ASSISTANT_NAME} to your group or type /userbotjoin to invite her.
 4.) turn on the voice chat first before start to play music.
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("📚 Command List", callback_data="cbhelp")],
@@ -303,7 +302,7 @@ async def cbdelcmds(_, query: CallbackQuery):
  2️⃣ to turn off feature:
      » type `/delcmd off`
       
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🏡 Go Back", callback_data="cbback")]]
         ),
@@ -317,7 +316,7 @@ async def cbhelps(_, query: CallbackQuery):
 
 **Yᴏᴜ ᴄᴀɴ ғɪɴᴅ ʜᴇʀᴇ sᴇᴠᴇʀᴀʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ᴡɪᴛʜ ʙʀɪᴇғ ᴇxᴘʟᴀɴᴀᴛɪᴏɴ 👇**
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -345,7 +344,7 @@ async def cbguides(_, query: CallbackQuery):
 3.) add @{ASSISTANT_NAME} to your group or type /userbotjoin to invite her.
 4.) turn on the voice chat first before start to play music.
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🏡 Go Back", callback_data="cbstart")]]
         ),
