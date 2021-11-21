@@ -4,7 +4,6 @@
 # Owner Asad + Harshit
 
 from config import (
-    ASSISTANT_NAME,
     BOT_USERNAME,
     GROUP_SUPPORT,
     OWNER_NAME,
@@ -341,7 +340,7 @@ async def cbguides(_, query: CallbackQuery):
 
 1.) first, add me to your group.
 2.) then promote me as admin and give all permissions except anonymous admin.
-3.) add @{ASSISTANT_NAME} to your group or type /userbotjoin to invite her.
+3.) add ASSISTANT to your group or type /userbotjoin to invite her.
 4.) turn on the voice chat first before start to play music.
 
 ⚡ __Powered by [ROCKS](t.me/Shayri_Music_Lovers) A.I__""",
