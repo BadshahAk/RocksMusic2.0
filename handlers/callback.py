@@ -3,16 +3,11 @@
 # Rocks © @Dr_Asad_Ali © Rocks
 # Owner Asad + Harshit
 
-from config import (
-    BOT_USERNAME,
-    GROUP_SUPPORT,
-    OWNER_NAME,
-    UPDATES_CHANNEL,
-)
-from callsmusic.callsmusic import client as USER
-from helpers.decorators import authorized_users_only
 from pyrogram import Client, filters
-from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, Chat, CallbackQuery
+
+from callsmusic.callsmusic import client as USER
+from config import BOT_USERNAME, UPDATES_CHANNEL
 
 
 @Client.on_callback_query(filters.regex("close"))
@@ -79,7 +74,7 @@ async def cbstart(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        "👥 ɢʀᴏᴜᴘ 👥︎", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "👥 ɢʀᴏᴜᴘ 👥︎", url=f"https://t.me/Shayri_Music_Lovers"
                     ),
                     InlineKeyboardButton(
                         "📣 ᴄʜᴀɴɴᴇʟ 📣", url=f"https://t.me/{UPDATES_CHANNEL}"
