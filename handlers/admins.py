@@ -338,7 +338,7 @@ async def cbunmute(_, query: CallbackQuery):
     elif result == 2:
         await query.edit_message_text("❗️ **ᴠᴄ ɴᴏᴛ ᴀᴄᴛɪᴠᴇ**", reply_markup=BACK_BUTTON)
 
-@Client.on_message(command(["auth", f"auth@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["auth", f"auth@{BOT_USERNAME}"]))
 @authorized_users_only
 async def authenticate(client, message):
     global admins
@@ -355,7 +355,7 @@ async def authenticate(client, message):
         await message.reply("✅ user already authorized!")
 
 
-@Client.on_message(command(["deauth", f"deauth@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["deauth", f"deauth@{BOT_USERNAME}"]))
 @authorized_users_only
 async def deautenticate(client, message):
     global admins
