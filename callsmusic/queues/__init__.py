@@ -1,3 +1,9 @@
-from callsmusic.queues.queues import clear, get, is_empty, put, task_done
+# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Without Credit (Mother Fucker)
+# Rocks © @Dr_Asad_Ali © Rocks
+# Owner Asad + Harshit
 
-__all__ = ["clear", "get", "is_empty", "put", "task_done"]
+
+from .queues import put, get, is_empty, task_done, clear
+
+# Roses are red, Violets are blue, A face like yours, Belongs in a zoo.
