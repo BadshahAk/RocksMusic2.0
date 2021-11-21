@@ -29,7 +29,7 @@ UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "AsadSupport")
 GROUP_SUPPORT = os.environ.get("GROUP_SUPPORT", "Shayri_Music_Lovers")
 OWNER_NAME = getenv("OWNER_NAME", "Dr_Asad_Ali")
 OWNER_ID = int(os.environ.get("OWNER_ID", "1342820594")
-ASSISTANT_NAME = getenv("ASSISTANT_NAME"))
+
 # SOON ADDING 
 ARQ_API_KEY = getenv("ARQ_API_KEY")
 # Don't Change Anything Here
