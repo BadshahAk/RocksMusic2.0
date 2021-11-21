@@ -1,6 +1,11 @@
-from asyncio import Queue
-from asyncio import QueueEmpty as Empty
-from typing import Dict
+# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Without Credit (Mother Fucker)
+# Rocks © @Dr_Asad_Ali © Rocks
+# Owner Asad + Harshit
+
+
+from asyncio import Queue, QueueEmpty as Empty
+from typing import Dict, Union
 
 queues: Dict[int, Queue] = {}
 
@@ -12,7 +17,7 @@ async def put(chat_id: int, **kwargs) -> int:
     return queues[chat_id].qsize()
 
 
-def get(chat_id: int) -> Dict[str, str]:
+def get(chat_id: int) -> Union[Dict[str, str], None]:
     if chat_id in queues:
         try:
             return queues[chat_id].get_nowait()
@@ -41,3 +46,6 @@ def clear(chat_id: int):
         else:
             queues[chat_id].queue = []
     raise Empty
+
+
+# Roses are red, Violets are blue, A face like yours, Belongs in a zoo.
