@@ -26,6 +26,7 @@ BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", False)) # If you ne
 THUMB_URL = os.environ.get("THUMB_URL", "https://telegra.ph/file/0aec1809fac360415d4cb.jpg")
 QUE_IMG = os.environ.get("QUE_IMG", "https://telegra.ph/file/7169e0ea05e66f0ffd1a2.jpg")
 UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "AsadSupport")
+BOT_NAME = getenv("BOT_NAME", "[𝗥𝗢𝗖𝗞𝗦 𝗣𝗥𝗢𝗝𝗘𝗖𝗧](t.me/Shayri_Music_Lovers)")
 GROUP_SUPPORT = os.environ.get("GROUP_SUPPORT", "Shayri_Music_Lovers")
 ASSISTANT_NAME = getenv("ASSISTANT_NAME")
 # SOON ADDING 
