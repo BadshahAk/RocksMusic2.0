@@ -63,10 +63,10 @@ async def start_(client: Client, message: Message):
                     InlineKeyboardButton(
                         "👑 ᴋɪɴɢ 👑", url="https://t.me/Dr_Asad_Ali"
                     )
-                ],
-            ]
+                ]
+                
+           ]
         ),
-        disable_web_page_preview=True,
     )
 
 
