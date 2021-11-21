@@ -1,3 +1,9 @@
+# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Without Credit (Mother Fucker)
+# Rocks 漏 @Dr_Asad_Ali 漏 Rocks
+# Owner Asad + Harshit
+
+
 from pyrogram import Client, errors
 from pyrogram.types import (
     InlineQuery,
@@ -31,7 +37,7 @@ async def inline(client: Client, query: InlineQuery):
                         result["duration"], result["viewCount"]["short"]
                     ),
                     input_message_content=InputTextMessageContent(
-                        "🔗 https://www.youtube.com/watch?v={}".format(result["id"])
+                        "馃敆 https://www.youtube.com/watch?v={}".format(result["id"])
                     ),
                     thumb_url=result["thumbnails"][0]["url"],
                 )
@@ -46,3 +52,6 @@ async def inline(client: Client, query: InlineQuery):
                 switch_pm_text="Error: search timed out",
                 switch_pm_parameter="",
             )
+
+
+# Roses are red, Violets are blue, A face like yours, Belongs in a zoo.
