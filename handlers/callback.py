@@ -267,7 +267,6 @@ async def close(_, query: CallbackQuery):
 
 
 @Client.on_callback_query(filters.regex("cbback"))
-@cb_admin_check
 async def cbback(_, query: CallbackQuery):
     await query.edit_message_text(
         "**💡 Bᴏᴛ Cᴏɴᴛʀᴏʟ ᴍᴇɴᴜ :**",
@@ -289,7 +288,6 @@ async def cbback(_, query: CallbackQuery):
 
 
 @Client.on_callback_query(filters.regex("cbdelcmds"))
-@cb_admin_check
 @authorized_users_only
 async def cbdelcmds(_, query: CallbackQuery):
     await query.edit_message_text(
