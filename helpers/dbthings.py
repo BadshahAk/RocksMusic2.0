@@ -1,22 +1,15 @@
-import asyncio
-import datetime
 import os
-import random
-import string
 import time
-import traceback
-
+import string
+import random
+import datetime
 import aiofiles
-from pyrogram.errors import (
-    FloodWait,
-    InputUserDeactivated,
-    PeerIdInvalid,
-    UserIsBlocked,
-)
+import asyncio
+import traceback
+from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 
-from config import BROADCAST_AS_COPY, GROUP_SUPPORT, LOG_CHANNEL
-from helpers.database import db, dcmdb
-
+from helpers.database import db, Database, dcmdb
+from config import LOG_CHANNEL, BROADCAST_AS_COPY
 
 async def handle_user_status(bot, cmd):
     chat_id = cmd.chat.id
@@ -30,19 +23,19 @@ async def handle_user_status(bot, cmd):
     ban_status = await db.get_ban_status(chat_id)
     if ban_status["is_banned"]:
         if (
-            datetime.date.today() - datetime.date.fromisoformat(ban_status["banned_on"])
+                datetime.date.today() - datetime.date.fromisoformat(ban_status["banned_on"])
         ).days > ban_status["ban_duration"]:
             await db.remove_ban(chat_id)
         else:
-            await cmd.reply_text(
-                f"Sᴏʀʀʏ ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ, ᴀsᴋ ɪɴ @Dr_Asad_Ali Oғ ʏᴏᴜ ᴛʜɪɴᴋ ᴛʜɪs ᴡᴀs ᴀɴs Mɪsᴛᴀᴋᴇ...😉.",
+            await cmd.reply_text("**Sᴏʀʀʏ ʏᴏᴜ ᴀʀᴇ ʙᴀɴɴᴇᴅ, ᴀsᴋ ɪɴ @Dr_Asad_Ali Oғ ʏᴏᴜ ᴛʜɪɴᴋ ᴛʜɪs ᴡᴀs ᴀɴs Mɪsᴛᴀᴋᴇ...😉.**",
                 quote=True,
             )
             return
     await cmd.continue_propagation()
-
-
-# Broadcast Tools
+    
+    
+    
+# Broadcast Things
 
 broadcast_ids = {}
 
@@ -55,7 +48,7 @@ async def send_msg(user_id, message):
             await message.copy(chat_id=user_id)
         return 200, None
     except FloodWait as e:
-        await asyncio.sleep(int(e.x))
+        await asyncio.sleep(e.x)
         return send_msg(user_id, message)
     except InputUserDeactivated:
         return 400, f"{user_id} : deactivated\n"
@@ -63,7 +56,7 @@ async def send_msg(user_id, message):
         return 400, f"{user_id} : blocked the bot\n"
     except PeerIdInvalid:
         return 400, f"{user_id} : user id invalid\n"
-    except Exception:
+    except Exception as e:
         return 500, f"{user_id} : {traceback.format_exc()}\n"
 
 
@@ -71,24 +64,29 @@ async def main_broadcast_handler(m, db):
     all_users = await db.get_all_users()
     broadcast_msg = m.reply_to_message
     while True:
-        broadcast_id = "".join(random.choice(string.ascii_letters) for i in range(3))
+        broadcast_id = ''.join([random.choice(string.ascii_letters) for i in range(3)])
         if not broadcast_ids.get(broadcast_id):
             break
     out = await m.reply_text(
-        text="**💡 Bʀᴏᴀᴅᴄᴀsᴛ Sᴛᴀʀᴛᴇᴅ...**\n\n**» Wʜᴇɴ ɪᴛ's ᴅᴏɴᴇ, ʏᴏᴜ'ʟʟ ʙᴇ ɴᴏᴛɪғɪᴇᴅ ʜᴇʀᴇ...!**"
+        text=f"**💡 Bʀᴏᴀᴅᴄᴀsᴛ Sᴛᴀʀᴛᴇᴅ...**\n\n**» Wʜᴇɴ ɪᴛ's ᴅᴏɴᴇ, ʏᴏᴜ'ʟʟ ʙᴇ ɴᴏᴛɪғɪᴇᴅ ʜᴇʀᴇ...!**"
     )
-
     start_time = time.time()
     total_users = await db.total_users_count()
     done = 0
     failed = 0
     success = 0
     broadcast_ids[broadcast_id] = dict(
-        total=total_users, current=done, failed=failed, success=success
+        total=total_users,
+        current=done,
+        failed=failed,
+        success=success
     )
-    async with aiofiles.open("broadcast-logs.txt", "w") as broadcast_log_file:
+    async with aiofiles.open('broadcast-logs.txt', 'w') as broadcast_log_file:
         async for user in all_users:
-            sts, msg = await send_msg(user_id=int(user["id"]), message=broadcast_msg)
+            sts, msg = await send_msg(
+                user_id=int(user['id']),
+                message=broadcast_msg
+            )
             if msg is not None:
                 await broadcast_log_file.write(msg)
             if sts == 200:
@@ -96,13 +94,17 @@ async def main_broadcast_handler(m, db):
             else:
                 failed += 1
             if sts == 400:
-                await db.delete_user(user["id"])
+                await db.delete_user(user['id'])
             done += 1
             if broadcast_ids.get(broadcast_id) is None:
                 break
             else:
                 broadcast_ids[broadcast_id].update(
-                    dict(current=done, failed=failed, success=success)
+                    dict(
+                        current=done,
+                        failed=failed,
+                        success=success
+                    )
                 )
     if broadcast_ids.get(broadcast_id):
         broadcast_ids.pop(broadcast_id)
@@ -120,17 +122,19 @@ async def main_broadcast_handler(m, db):
             caption=f"✅ Bʀᴏᴀᴅᴄᴀsᴛɪɴɢ Cᴏᴍᴘʟᴇᴛᴇᴅ! \n**Completed in:** `{completed_in}`\n\n**Total users:** `{total_users}` \n**Total done:** `{done}` \n**Total success:** `{success}` \n**Total failed:** `{failed}`",
             quote=True,
         )
-    os.remove("broadcast-logs.txt")
+    os.remove('broadcast-logs.txt')
+
 
 
 # Anti Command Feature
 
 delcmdmdb = dcmdb.admins
 
-
 async def delcmd_is_on(chat_id: int) -> bool:
     chat = await delcmdmdb.find_one({"chat_id": chat_id})
-    return not chat
+    if not chat:
+        return True
+    return False
 
 
 async def delcmd_on(chat_id: int):
