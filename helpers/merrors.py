@@ -1,3 +1,9 @@
+# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Without Credit (Mother Fucker)
+# Rocks © @Dr_Asad_Ali © Rocks
+# Owner Asad + Harshit
+
+
 import sys
 import traceback
 from functools import wraps
@@ -55,3 +61,4 @@ def capture_err(func):
             raise err
 
     return capture
+# Roses are red, Violets are blue, A face like yours, Belongs in a zoo.
