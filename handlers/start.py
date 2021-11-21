@@ -49,7 +49,7 @@ async def start_(client: Client, message: Message):
                 [InlineKeyboardButton("👩‍💻 ʙᴀsɪᴄ ɢᴜɪᴅᴇ 👩‍💻 ", callback_data="cbhowtouse")],
                 [
                     InlineKeyboardButton("📚 ᴄᴏᴍᴍᴀɴᴅs︎ 📚", callback_data="cbcmds"),
-                    InlineKeyboardButton("💝 ᴏᴡɴᴇʀ 💝", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("💝 ᴏᴡɴᴇʀ 💝", url=f"https://t.me/Dr_Asad_Ali"),
                 ],
                 [
                     InlineKeyboardButton(
