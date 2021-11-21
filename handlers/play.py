@@ -14,12 +14,13 @@ import wget
 
 from helpers.database import db, Database
 from helpers.dbthings import handle_user_status
-from config import DURATION_LIMIT, LOG_CHANNEL, BOT_USERNAME, THUMB_URL, QUE_IMG, GROUP_SUPPORT
+from config import DURATION_LIMIT, LOG_CHANNEL, BOT_USERNAME, THUMB_URL, QUE_IMG
 from helpers.errors import DurationLimitError
 from helpers.filters import command, other_filters
 from helpers.decorators import errors
 from converter.converter import convert
 from . import que
+
 
 
 @Client.on_message(filters.private)
