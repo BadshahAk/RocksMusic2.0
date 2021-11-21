@@ -11,7 +11,7 @@ from config import (
     OWNER_NAME,
     UPDATES_CHANNEL,
 )
-from handlers.play import cb_admin_check
+from callsmusic.callsmusic import client as USER
 from helpers.decorators import authorized_users_only
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
