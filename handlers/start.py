@@ -117,16 +117,16 @@ async def help(client: Client, message: Message):
     
     
     
-@Client.on_message(commandpro(["repo", "/source"]) & filters.group & ~filters.edited)
-async def repo(client: Client, message: Message):
+@Client.on_message(command("repo")  & ~filters.edited)
+async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/336e006861a2667a7663f.jpg",
-        caption=f"""**ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ**""",
+        caption=f"""ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "💥 ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ 💞", url=f"https://github.com/jankarikiduniya)
+                        "💥 ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ 💞", url=f"https://github.com/jankarikiduniya")
                 ]
             ]
         ),
