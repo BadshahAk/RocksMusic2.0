@@ -37,12 +37,17 @@ async def delcmd(_, message: Message):
     await message.continue_propagation()
 
 
-@Client.on_message(command(["reload", f"reload@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
-async def ping_pong(client: Client, message: Message):
-    start = time()
-    m_reply = await message.reply_text("**Rᴇʟᴏᴀᴅɪɴɢ**...")
-    delta_ping = time() - start
-    await m_reply.edit_text(f"""**━━━━━━━━━━━━━━━━━━━
+
+@Client.on_message(filters.command(["reload", f"adminchache"]))
+@authorized_users_only # Fuk Off Everyone! Admin Only Command!
+async def update_admin(client, message):
+    global fuck
+    admins = await client.get_chat_members(message.chat.id, filter="administrators")
+    new_ads = []
+    for u in admins:
+        new_ads.append(u.user.id)
+    fuck[message.chat.id] = new_ads
+    await message.reply_text(f"""**━━━━━━━━━━━━━━━━━━━
 💥 ʜᴇʟʟᴏ, ɪ ᴀᴍ [ʀᴏᴄᴋs](t.me/Shayri_Music_Lovers) ᴠᴄ ᴘʟᴀʏᴇʀ
 ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs.
 ┏━━━━━━━━━━━━━━━━━┓
@@ -55,7 +60,7 @@ async def ping_pong(client: Client, message: Message):
 ᴛʜᴇɴ ᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ](t.me/Dr_Asad_Ali)
 ━━━━━━━━━━━━━━━━━━━**""",
     )
-
+ 
 
 # Control Menu Of Player
 @Client.on_message(command(["control", f"controlpanel", "p"]))
