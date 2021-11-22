@@ -37,17 +37,12 @@ async def delcmd(_, message: Message):
     await message.continue_propagation()
 
 
-@Client.on_message(filters.command(["reload", f"adminchache"]))
-@authorized_users_only # Fuk Off Everyone! Admin Only Command!
-async def update_admin(client, message):
-    global admins
-    new_admins = []
-    new_ads = await client.get_chat_members(message.chat.id, filter="administrators")
-    for u in new_ads:
-        new_admins.append(u.user.id)
-    admins[message.chat.id] = new_admins
-    await message.reply_text(
-        f"""**━━━━━━━━━━━━━━━━━━━
+@Client.on_message(command(["reload", f"reload@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
+async def ping_pong(client: Client, message: Message):
+    start = time()
+    m_reply = await message.reply_text("**Rᴇʟᴏᴀᴅɪɴɢ**...")
+    delta_ping = time() - start
+    await m_reply.edit_text(f"""**━━━━━━━━━━━━━━━━━━━
 💥 ʜᴇʟʟᴏ, ɪ ᴀᴍ [ʀᴏᴄᴋs](t.me/Shayri_Music_Lovers) ᴠᴄ ᴘʟᴀʏᴇʀ
 ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs.
 ┏━━━━━━━━━━━━━━━━━┓
