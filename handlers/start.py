@@ -86,8 +86,7 @@ async def start(client: Client, message: Message):
     )
 
 
-@Client.on_message(
-    command(["help", f"help@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+@Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & filters.group & ~filters.edited
 )
 async def help(client: Client, message: Message):
     await message.reply_text(
@@ -102,8 +101,7 @@ async def help(client: Client, message: Message):
     )
 
 
-@Client.on_message(
-    command(["help", f"help@{BOT_USERNAME}"]) & filters.private & ~filters.edited
+@Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & filters.private & ~filters.edited
 )
 async def help_(client: Client, message: Message):
     await message.reply_text(
