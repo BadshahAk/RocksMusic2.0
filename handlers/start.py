@@ -113,18 +113,3 @@ async def help(client: Client, message: Message):
     m_reply = await message.reply_text("**ɢᴇᴛᴛɪɴɢ ʜᴇʟᴘ ᴍᴇɴᴜ...**")
     delta_ping = time() - start
     await m_reply.edit_text("🏓 **ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ** !!\n" f"⚡️ ʀᴜɴ /play ᴏʀ /userbotjoin ᴄᴏᴍᴍᴀɴᴅs\n" f"⚡️ Bʏ  [ᴀsᴀᴅ ᴀʟɪ](t.me/Dr_Asad_Ali)"
-
-    
-    
-    
-
-  
-    
-@Client.on_message(command(["owner", f"owner@{BOT_USERNAME}"]) & ~filters.edited)
-async def ping_pong(client: Client, message: Message):
-    start = time()
-    m_reply = await message.reply_text("**ɢᴇᴛᴛɪɴɢ ᴏᴡɴᴇʀ...**")
-    delta_ping = time() - start
-    await m_reply.edit_text("🏓 **ᴀsᴀᴅ ᴀʟɪ** !!\n" f"⚡️ **ʜᴀʀsʜɪᴛ**\n" f"⚡️ Bʏ  [ᴀsᴀᴅ ᴀʟɪ](t.me/Dr_Asad_Ali)"
-
-  
