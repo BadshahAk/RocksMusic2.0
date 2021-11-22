@@ -131,18 +131,13 @@ async def repo(client: Client, message: Message):
             ]
         ),
     )
+  
+    
+@Client.on_message(command(["owner", f"owner@{BOT_USERNAME}"]) & ~filters.edited)
+async def ping_pong(client: Client, message: Message):
+    start = time()
+    m_reply = await message.reply_text("**ɢᴇᴛᴛɪɴɢ ᴏᴡɴᴇʀ...**")
+    delta_ping = time() - start
+    await m_reply.edit_text("🏓**ᴀsᴀᴅ ᴀʟɪ** !!\n" f"⚡️ **ʜᴀʀsʜɪᴛ**\n" f"⚡️ Bʏ  [ᴀsᴀᴅ ᴀʟɪ](t.me/Dr_Asad_Ali")
 
-    @Client.on_message(commandpro(["owner", "king"]) & filters.group & ~filters.edited)
-async def owner(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/1771e4f5fb861c6f9749e.jpg",
-        caption=f"""**ɪᴛ's ᴍʏ ᴏᴡɴᴇʀ ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ʜɪᴍ**""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "💥 ᴍʏ ᴏᴡɴᴇʀ ɪs [ᴀsᴀᴅ ᴀʟɪ](t.me/Dr_Asad_Ali")
-                ]
-            ]
-        ),
-    )
+  
