@@ -117,7 +117,7 @@ async def ping_pong(client: Client, message: Message):
     
     
     
-@Client.on_message(commandpro(["/repo", "/source"]) & ~filters.edited)
+@Client.on_message(commandpro(["/repo", "/source"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/336e006861a2667a7663f.jpg",
@@ -132,7 +132,7 @@ async def start(client: Client, message: Message):
         ),
     )
 
-    @Client.on_message(commandpro(["/owner", "/king"]) & ~filters.edited)
+    @Client.on_message(commandpro(["/owner", "/king"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/1771e4f5fb861c6f9749e.jpg",
