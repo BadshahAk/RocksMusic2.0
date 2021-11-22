@@ -86,46 +86,6 @@ async def start(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & filters.group & ~filters.edited
-)
-async def help(client: Client, message: Message):
-    await message.reply_text(
-        f"""<b>👋🏻 **Hello Sweet Heart ❣️ How Are You** {message.from_user.mention()}</b>
-
-**Yᴏᴜ ᴄᴀɴ ғɪɴᴅ ʜᴇʀᴇ sᴇᴠᴇʀᴀʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ᴡɪᴛʜ ʙʀɪᴇғ ᴇxᴘʟᴀɴᴀᴛɪᴏɴ ɢɪᴠᴇ ᴍᴇ [ʜᴇᴀʀᴛ](https://t.me/Give_Me_Heart)👇 !**
-
-⚡ __Powered by {BOT_NAME} A.I__""",
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="🤔 Hᴏᴡ ᴛᴏ ᴜsᴇ Mᴇ 🤔", callback_data="cbguide")]]
-        ),
-    )
-
-
-@Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & filters.private & ~filters.edited
-)
-async def help_(client: Client, message: Message):
-    await message.reply_text(
-        f"""<b>💡 Hello {message.from_user.mention} Sᴡᴇᴇᴛ Hᴇᴀʀᴛ ❤️ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ʜᴇʟᴘ ᴍᴇɴᴜ !</b>
-
-**Yᴏᴜ ᴄᴀɴ ғɪɴᴅ ʜᴇʀᴇ sᴇᴠᴇʀᴀʟ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ᴡɪᴛʜ ʙʀɪᴇғ ᴇxᴘʟᴀɴᴀᴛɪᴏɴ 👇**
-
-⚡ __Powered by {BOT_NAME} A.I__""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("📚 ʙᴀsɪᴄ ᴄᴍᴅ 📚", callback_data="cbbasic"),
-                    InlineKeyboardButton("📕 ᴀᴅᴠᴀɴᴄᴇᴅ ᴄᴍᴅ 📕", callback_data="cbadvanced"),
-                ],
-                [
-                    InlineKeyboardButton("📘 ᴀᴅᴍɪɴ ᴄᴍᴅ 📘", callback_data="cbadmin"),
-                    InlineKeyboardButton("📗 sᴜᴅᴏ ᴄᴍᴅ 📗", callback_data="cbsudo"),
-                ],
-                [InlineKeyboardButton("📙 ᴏᴡɴᴇʀ ᴄᴍᴅ 📙", callback_data="cbowner")],
-                [InlineKeyboardButton("📔 ғᴜɴ ᴄᴍᴅ 📔", callback_data="cbfun")],
-            ]
-        ),
-    )
-
 
 @Client.on_message(command(["ping", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
@@ -147,11 +107,21 @@ async def get_uptime(client: Client, message: Message):
     )
     
     
-@Client.on_message(command(["repo", "source"]) & filters.group & ~filters.edited)
-async def help(client: Client, message: Message):
+@Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & ~filters.edited)
+async def ping_pong(client: Client, message: Message):
+    start = time()
+    m_reply = await message.reply_text("**ɢᴇᴛᴛɪɴɢ ʜᴇʟᴘ ᴍᴇɴᴜ...**")
+    delta_ping = time() - start
+    await m_reply.edit_text("🏓**ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ** !!\n" f"⚡️ ʀᴜɴ /play ᴏʀ /userbotjoin ᴄᴏᴍᴍᴀɴᴅs\n" f"⚡️ Bʏ  [ᴀsᴀᴅ ᴀʟɪ](t.me/Dr_Asad_Ali")
+
+    
+    
+    
+@Client.on_message(commandpro(["/repo", "/source"]) & ~filters.edited)
+async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/336e006861a2667a7663f.jpg",
-        caption=f"""""",
+        caption=f"""**ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -162,16 +132,16 @@ async def help(client: Client, message: Message):
         ),
     )
 
-@Client.on_message(command(["owner", "king"]) & filters.group & ~filters.edited)
-async def help(client: Client, message: Message):
+    @Client.on_message(commandpro(["/owner", "/king"]) & ~filters.edited)
+async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/1771e4f5fb861c6f9749e.jpg",
-        caption=f"""""",
+        caption=f"""**ɪᴛ's ᴍʏ ᴏᴡɴᴇʀ ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ʜɪᴍ**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "💥 ᴍʏ ᴏᴡɴᴇʀ ɪs [Asᴀᴅ Aʟɪ](t.me/Dr_Asad_Ali")
+                        "💥 ᴍʏ ᴏᴡɴᴇʀ ɪs [ᴀsᴀᴅ ᴀʟɪ](t.me/Dr_Asad_Ali")
                 ]
             ]
         ),
