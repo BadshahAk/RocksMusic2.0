@@ -108,7 +108,7 @@ async def get_uptime(client: Client, message: Message):
     
     
 @Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & ~filters.edited)
-async def ping_pong(client: Client, message: Message):
+async def help(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("**ɢᴇᴛᴛɪɴɢ ʜᴇʟᴘ ᴍᴇɴᴜ...**")
     delta_ping = time() - start
@@ -118,7 +118,7 @@ async def ping_pong(client: Client, message: Message):
     
     
 @Client.on_message(commandpro(["/repo", "/source"]) & filters.group & ~filters.edited)
-async def start(client: Client, message: Message):
+async def repo(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/336e006861a2667a7663f.jpg",
         caption=f"""**ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ**""",
@@ -133,7 +133,7 @@ async def start(client: Client, message: Message):
     )
 
     @Client.on_message(commandpro(["/owner", "/king"]) & filters.group & ~filters.edited)
-async def start(client: Client, message: Message):
+async def owner(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/1771e4f5fb861c6f9749e.jpg",
         caption=f"""**ɪᴛ's ᴍʏ ᴏᴡɴᴇʀ ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ʜɪᴍ**""",
