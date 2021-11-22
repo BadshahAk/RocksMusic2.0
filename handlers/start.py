@@ -117,21 +117,7 @@ async def help(client: Client, message: Message):
     
     
     
-@Client.on_message(command(["repo", f"repo@{BOT_USERNAME}"]) & ~filters.edited)
-async def ping_pong(client: Client, message: Message):
-    start = time()
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/336e006861a2667a7663f.jpg",
-        caption=f"""ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "💥 ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ 💞", url=f"https://github.com/jankarikiduniya")
-                ]
-            ]
-        ),
-    )
+
   
     
 @Client.on_message(command(["owner", f"owner@{BOT_USERNAME}"]) & ~filters.edited)
