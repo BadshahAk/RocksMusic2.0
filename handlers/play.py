@@ -186,4 +186,4 @@ async def nplay(_, message: Message):
         thumb = THUMB_URL
         await callsmusic.set_stream(message.chat.id, file)
         await lel.delete()
-        await message.reply_photo(thumb, caption=f"**👉 Pʟᴀʏɪɴɢ ʏᴏᴜʀ sᴏɴɢ**\n🏷**ɴᴀᴍᴇ:** [{title[:20]}]({url})\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n**👑 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ: {}**", reply_markup=PLAYMSG_BUTTONS)
+        await message.reply_photo(thumb, caption=f"**👉 Pʟᴀʏɪɴɢ ʏᴏᴜʀ sᴏɴɢ**\n🏷**ɴᴀᴍᴇ:** [{title[:20]}]({url})\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n**👑 ʀᴇǫᴜᴇsᴛᴇᴅ ᴜꜱᴇʀ ʙʏ: {}**".format(message.from_user.mention()), reply_markup=PLAYMSG_BUTTONS)
