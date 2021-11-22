@@ -117,8 +117,9 @@ async def help(client: Client, message: Message):
     
     
     
-@Client.on_message(command("repo")  & ~filters.edited)
-async def start_(client: Client, message: Message):
+@Client.on_message(command(["repo", f"repo@{BOT_USERNAME}"]) & ~filters.edited)
+async def ping_pong(client: Client, message: Message):
+    start = time()
     await message.reply_photo(
         photo=f"https://telegra.ph/file/336e006861a2667a7663f.jpg",
         caption=f"""ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ""",
