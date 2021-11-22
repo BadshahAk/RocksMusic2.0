@@ -34,7 +34,7 @@ async def _human_time_duration(seconds):
 async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/e3ae4f861b9b927a14a78.mp4",
-        caption=f"""**ᴀ ᴀᴅᴠᴀɴᴄᴇᴅ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜꜱɪᴄ ʙᴏᴛ ʙᴀꜱᴇᴅ ᴏɴ ᴍᴏɴɢᴏᴅʙ ᴡɪᴛʜ ᴀɪ ꜰᴇᴀᴛᴜʀᴇꜱ ...
+        caption=f"""**ᴀ ᴀᴅᴠᴀɴᴄᴇᴅ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜꜱɪᴄ ʙᴏᴛ ʙᴀꜱᴇᴅ ᴏɴ ᴍᴏɴɢᴏᴅʙ ᴡɪᴛʜ ᴀɪ ꜰᴇᴀᴛᴜʀᴇꜱ ...ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛʜᴇ ʀᴜɴ /userbotjoin ᴄᴏᴍᴍᴀɴᴅs ᴀɴᴅ /reload ...
 💞 ᴛʜᴀɴᴋꜱ ꜰᴏʀ  
 ᴜꜱɪɴɢ [ʀᴏᴄᴋs ᴍᴜsɪᴄ](t.me/{BOT_USERNAME}).\nᴍʏ [ᴅᴇᴠᴇʟᴏᴘᴇʀ](t.me/Dr_Asad_Ali) ᴍʏ [sᴜᴘᴘᴏʀᴛᴇʀ](t.me/HarshitSharma361)\n
 **""",
@@ -106,10 +106,4 @@ async def get_uptime(client: Client, message: Message):
         f"• **Sᴛᴀʀᴛ Tɪᴍᴇ:** `{START_TIME_ISO}`"
     )
     
-    
-@Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & ~filters.edited)
-async def help(client: Client, message: Message):
-    start = time()
-    m_reply = await message.reply_text("**ɢᴇᴛᴛɪɴɢ ʜᴇʟᴘ ᴍᴇɴᴜ...**")
-    delta_ping = time() - start
-    await m_reply.edit_text("🏓 **ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ** !!\n" f"⚡️ ʀᴜɴ /play ᴏʀ /userbotjoin ᴄᴏᴍᴍᴀɴᴅs\n" f"⚡️ Bʏ  [ᴀsᴀᴅ ᴀʟɪ](t.me/Dr_Asad_Ali)"
+
