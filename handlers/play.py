@@ -36,7 +36,7 @@ PLAYMSG_BUTTONS = InlineKeyboardMarkup(
                 ],
                 [
                     InlineKeyboardButton(
-                        "👨‍👨‍👧‍👦 ɢʀᴏᴜᴘ 👨‍👨‍👧‍👦", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "👨‍👨‍👧‍👦 ɢʀᴏᴜᴘ 👨‍👨‍👧‍👦", url=f"https://t.me/Shayri_Music_Lovers"
                     )
                 ],
             ]
@@ -125,7 +125,7 @@ async def nplay(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "👨‍👨‍👧‍👦 ɢʀᴏᴜᴘ 👨‍👨‍👧‍👦", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "👨‍👨‍👧‍👦 ɢʀᴏᴜᴘ 👨‍👨‍👧‍👦", url=f"https://t.me/Shayri_Music_Lovers"
                     )
                 ],
             ]
